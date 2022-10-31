@@ -1,4 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Nuxt E-commerce
+
+A test e-commerce project built with Nuxt 3.
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
