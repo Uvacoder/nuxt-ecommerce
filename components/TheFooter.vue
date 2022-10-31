@@ -2,6 +2,6 @@
 
 <template>
   <footer class="footer">
-    Copyright {{ new Date().getFullYear() }} © Kvass
+    Copyright {{ new Date().getFullYear() }} © Nuxt e-commerce
   </footer>
 </template>

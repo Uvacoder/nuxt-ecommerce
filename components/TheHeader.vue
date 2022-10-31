@@ -2,6 +2,6 @@
 
 <template>
   <header class="header">
-    <NuxtLink to="/">Kvass</NuxtLink>
+    <NuxtLink to="/">Nuxt e-commerce</NuxtLink>
   </header>
 </template>
