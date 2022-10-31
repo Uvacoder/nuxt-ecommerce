@@ -18,6 +18,7 @@ defineProps<{
           display: flex;
           justify-content: space-between;
           align-items: baseline;
+          gap: 1rem;
         "
       >
         <p>{{ product.price }}</p>
@@ -34,7 +35,7 @@ defineProps<{
 
   &__title,
   &__description {
-    margin-block: 0.5rem;
+    margin-block: 1rem;
   }
 
   img {
