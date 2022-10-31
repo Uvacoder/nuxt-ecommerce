@@ -2,6 +2,14 @@
 
 <template>
   <header class="header">
-    <NuxtLink to="/">Nuxt e-commerce</NuxtLink>
+    <Container>
+      <NuxtLink to="/">Nuxt e-commerce</NuxtLink>
+    </Container>
   </header>
 </template>
+
+<style lang="scss">
+.header {
+  padding-block: 2rem;
+}
+</style>

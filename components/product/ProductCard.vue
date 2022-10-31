@@ -9,10 +9,10 @@ defineProps<{
 <template>
   <NuxtLink :to="`/product/${product.id}`" class="product-card">
     <img :src="product.thumbnail" :alt="product.title" />
-    <div class="product-card__infdo">
-      <h3>{{ product.title }}</h3>
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title }}</h3>
       <Badge>{{ product.category }}</Badge>
-      <p>{{ product.description }}</p>
+      <p class="product-card__description">{{ product.description }}</p>
       <div
         style="
           display: flex;
@@ -31,6 +31,11 @@ defineProps<{
 .product-card {
   color: inherit;
   text-decoration: none;
+
+  &__title,
+  &__description {
+    margin-block: 0.5rem;
+  }
 
   img {
     width: 100%;

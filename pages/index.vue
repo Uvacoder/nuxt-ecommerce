@@ -14,11 +14,17 @@ const { data, error } = await useFetch<Response>(
 </script>
 
 <template>
-  <div>
+  <Container>
     <h1>Nuxt e-commerce</h1>
     <main>
       <ProductGrid :products="data.products" />
     </main>
     <p v-if="error">{{ error }}</p>
-  </div>
+  </Container>
 </template>
+
+<style lang="scss">
+h1 {
+  margin-bottom: 4rem;
+}
+</style>

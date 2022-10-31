@@ -2,6 +2,14 @@
 
 <template>
   <footer class="footer">
-    Copyright {{ new Date().getFullYear() }} © Nuxt e-commerce
+    <Container>
+      Copyright {{ new Date().getFullYear() }} © Nuxt e-commerce
+    </Container>
   </footer>
 </template>
+
+<style lang="scss">
+.footer {
+  padding-block: 2rem;
+}
+</style>
