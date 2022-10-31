@@ -10,7 +10,7 @@ defineProps<{
   <StarRating
     :model-value="rating"
     :show-control="false"
-    :star-size="16"
+    star-size="16"
     :disable-click="true"
     star-color="currentColor"
   />
