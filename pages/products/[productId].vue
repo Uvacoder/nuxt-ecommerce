@@ -12,7 +12,13 @@ const { data: product } = await useFetch<Product>(
 <template>
   <Container>
     <h1>{{ product.title }}</h1>
-    <img :src="product.thumbnail" :alt="product.title" />
+    <nuxt-img
+      fit="cover"
+      format="webp"
+      :src="product.thumbnail"
+      :alt="product.title"
+    />
     <p>{{ product.description }}</p>
+    <ImageGallery :images="product.images" />
   </Container>
 </template>

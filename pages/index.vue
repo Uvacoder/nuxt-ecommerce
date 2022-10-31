@@ -15,7 +15,7 @@ const { data, error } = await useFetch<Response>(
 
 <template>
   <Container>
-    <h1>Nuxt e-commerce</h1>
+    <h1>Products</h1>
     <main>
       <ProductGrid :products="data.products" />
     </main>

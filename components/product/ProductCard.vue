@@ -4,10 +4,17 @@ import type { Product } from '@/types/product'
 defineProps<{
   product: Product
 }>()
+
+const formatCurrency = (value: number) =>
+  value.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    currencyDisplay: 'symbol',
+  })
 </script>
 
 <template>
-  <NuxtLink :to="`/product/${product.id}`" class="product-card">
+  <NuxtLink :to="`/products/${product.id}`" class="product-card">
     <img :src="product.thumbnail" :alt="product.title" />
     <div class="product-card__info">
       <h3 class="product-card__title">{{ product.title }}</h3>
@@ -21,7 +28,7 @@ defineProps<{
           gap: 1rem;
         "
       >
-        <p>{{ product.price }}</p>
+        <p>{{ formatCurrency(product.price) }}</p>
         <ProductRating :rating="product.rating" />
       </div>
     </div>
@@ -36,6 +43,10 @@ defineProps<{
   &__title,
   &__description {
     margin-block: 1rem;
+  }
+
+  &__description {
+    opacity: 0.7;
   }
 
   img {
