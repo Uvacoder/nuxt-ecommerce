@@ -15,7 +15,13 @@ const formatCurrency = (value: number) =>
 
 <template>
   <NuxtLink :to="`/products/${product.id}`" class="product-card">
-    <img :src="product.thumbnail" :alt="product.title" />
+    <nuxt-img
+      format="webp"
+      loading="lazy"
+      fit="cover"
+      :src="product.thumbnail"
+      :alt="product.title"
+    />
     <div class="product-card__info">
       <h3 class="product-card__title">{{ product.title }}</h3>
       <Badge>{{ product.category }}</Badge>
@@ -52,7 +58,6 @@ const formatCurrency = (value: number) =>
   img {
     width: 100%;
     aspect-ratio: 3/2;
-    object-fit: cover;
   }
 }
 </style>

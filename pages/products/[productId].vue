@@ -14,6 +14,7 @@ const { data: product } = await useFetch<Product>(
     <nuxt-img
       fit="cover"
       format="webp"
+      loading="lazy"
       :src="product.thumbnail"
       :alt="product.title"
     />

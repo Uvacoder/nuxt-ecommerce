@@ -47,7 +47,9 @@ onUnmounted(() => {
         class="image-gallery__item"
         fit="cover"
         format="webp"
+        loading="lazy"
         :src="image"
+        alt=""
       />
     </a>
   </div>
