@@ -9,10 +9,12 @@
   },
   "devDependencies": {
     "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
+    "nanoid": "^4.0.0",
     "nuxt": "3.0.0-rc.12",
     "sass": "^1.55.0"
   },
   "dependencies": {
+    "photoswipe": "^5.3.3",
     "vue3-star-ratings": "^1.1.0"
   }
 }
