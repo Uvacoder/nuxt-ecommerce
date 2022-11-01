@@ -1,48 +1,25 @@
 <script setup lang="ts">
+import type { Product } from '@/types/product'
 import { nanoid } from 'nanoid'
 
-import Photoswipe from 'photoswipe'
-import PhotoswipeLightbox from 'photoswipe/lightbox'
-import 'photoswipe/style.css'
+import VueEasyLightbox, { useEasyLightbox } from 'vue-easy-lightbox'
+import 'vue-easy-lightbox/style.css'
 
-import type { Product } from '@/types/product'
-
-defineProps<{
+const props = defineProps<{
   images: Product['images']
 }>()
 
-const lightbox = ref(null)
+const galleryId = ref(nanoid())
 
-onMounted(() => {
-  if (!lightbox.value) {
-    lightbox.value = new PhotoswipeLightbox({
-      gallery: `#${nanoid()}`,
-      children: 'a',
-      pswpModule: Photoswipe,
-    })
-  }
-  lightbox.value.init()
-})
-
-onUnmounted(() => {
-  if (lightbox.value) {
-    lightbox.value.destroy()
-    lightbox.value = null
-  }
+const { show, onHide, visibleRef, indexRef, imgsRef } = useEasyLightbox({
+  imgs: props.images,
+  initIndex: 0,
 })
 </script>
 
 <template>
-  <div class="image-gallery">
-    <a
-      v-for="(image, key) in images"
-      :key="key"
-      :href="image"
-      :data-pswp-width="200"
-      :data-pswp-height="200"
-      target="_blank"
-      rel="noreferrer"
-    >
+  <div class="image-gallery" :id="galleryId">
+    <a v-for="(image, key) in images" :key="key" href="" @click.prevent="show">
       <nuxt-img
         class="image-gallery__item"
         fit="cover"
@@ -52,6 +29,12 @@ onUnmounted(() => {
         alt=""
       />
     </a>
+    <vue-easy-lightbox
+      :visible="visibleRef"
+      :imgs="imgsRef"
+      :index="indexRef"
+      @hide="onHide"
+    />
   </div>
 </template>
 
